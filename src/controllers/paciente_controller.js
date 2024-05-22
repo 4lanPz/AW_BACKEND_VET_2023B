@@ -106,7 +106,7 @@ const registrarPaciente = async(req,res)=>{
     // Genera una contraseña aleatoria
     const password = Math.random().toString(36).slice(2)
     // Encripta la contraseña
-    nuevoPaciente.password = await nuevoPaciente.encrypPassword("vet"+password)
+    nuevoPaciente.password = await nuevoPaciente.encryptPassword("vet"+password)
     // Envía un correo electrónico al paciente con la contraseña
     await sendMailToPaciente(email,"vet"+password)
     // Asocia el paciente con el veterinario que hizo la solicitud
